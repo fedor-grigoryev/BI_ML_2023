@@ -46,7 +46,7 @@ def multiclass_accuracy(y_pred, y_true):
     
     return accuracy
 
-def r_squared(y_pred, y_true):
+def r_squared(y_true, y_pred):
     """
     Computes r-squared for regression
     Arguments:
@@ -56,10 +56,7 @@ def r_squared(y_pred, y_true):
     r2 - r-squared value
     """
 
-    """
-    YOUR CODE IS HERE
-    """
-    pass
+    return 1 - np.sum((y_pred - y_true)**2) / np.sum((y_true - y_true.mean())**2)
 
 
 def mse(y_pred, y_true):
@@ -72,10 +69,7 @@ def mse(y_pred, y_true):
     mse - mean squared error
     """
 
-    """
-    YOUR CODE IS HERE
-    """
-    pass
+    return np.mean((y_pred - y_true)**2)
 
 
 def mae(y_pred, y_true):
@@ -87,9 +81,6 @@ def mae(y_pred, y_true):
     Returns:
     mae - mean absolut error
     """
-
-    """
-    YOUR CODE IS HERE
-    """
-    pass
+    
+    return np.mean(np.abs(y_pred - y_true))
     
